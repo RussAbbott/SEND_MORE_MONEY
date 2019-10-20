@@ -48,7 +48,7 @@ Solution found after 4 assignments!
 
 ```
 
-The initial propagation finds values for problem variables `O=0`, `M=1`, and `S=9`, and for the three carry variables `C3=0`,  `C4=1`, and `C5=0`. (`C5` is the carry-out variables from the left-most column. The system is able to derive its value.)
+The initial propagation finds values for problem variables `O=0`, `M=1`, and `S=9`, and for the carry variables `C3=0`,  `C4=1`, and `C5=0`. (`C5` is the carry-out variables from the left-most column. The system is able to derive its value.)
 
 The search selects `E` as the first variable for which to try trial values. Since 0 and 1 are taken, the search tries `E=2`, `E=3`, and `E=4`. Each of these are found to be incompatible with the problem specification. When the search tries `E=5`, it is able to solve the entire problem. 
 
