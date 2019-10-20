@@ -10,7 +10,7 @@ The propagator is called repeatedly during the search, which is implemented by t
 
 The function `run_column_propagator` repeatedly calls `column_propagator` on all the columns until no new information is generated, at which point the search continues.  
 
-An execution of `SEND_MORE_MONEY` generates thr following output. (The variables `C_i` are carry variables. In particular, `C0` is the carry-in variable to the units position. It is defined to be 0. The anonymous variable `'_'` serves as left-fill for short numbers and has the value 0. As you can see in the Initial state, the only pre-defined values are `C0` and `_`, which are both 0.) The other variables, both problem variables (other than 'M' and 'S') and carry variables are all given domains of `frozenset(range(10))`. As the initial digits of numbers `M` and `S` are given initial domains of `frozenset(range(1, 10))`. Numbers may not have leading zeros.
+An execution of `SEND_MORE_MONEY` generates the following output. (The variables `C_i` are carry variables. In particular, `C0` is the carry-in variable to the units position. It is defined to be 0. The anonymous variable `'_'` serves as left-fill for short numbers and has the value 0. As you can see in the Initial state, the only pre-defined values are `C0` and `_`, which are both 0.) The other variables, both problem variables (other than 'M' and 'S') and carry variables are all given domains of `frozenset(range(10))`. As the initial digits of numbers `M` and `S` are given initial domains of `frozenset(range(1, 10))`. Numbers may not have leading zeros.
 
 ```
 Problem: (['SEND', 'MORE'], 'MONEY')
