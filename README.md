@@ -1,6 +1,6 @@
 # SEND_MORE_MONEY
 A solver with an arithmetic propagator for SEND+MORE=MONEY.
-It is based on the propagator in Van Hentenryck's Coursera course on [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization/home/welcome). The propagator is discussed in [Video CS-2](https://www.coursera.org/learn/discrete-optimization/lecture/nHott/cp-2-propagation-arithmetic-constraints-send-more-money).
+It is based on the propagator in Van Hentenryck's Coursera course on [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization/home/welcome). The propagator is discussed in [Video CP-2](https://www.coursera.org/learn/discrete-optimization/lecture/nHott/cp-2-propagation-arithmetic-constraints-send-more-money).
 
 The program can be run by running the file `send_more_money.py`.
 
