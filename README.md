@@ -1,16 +1,16 @@
 # SEND_MORE_MONEY
-A solver with an arithmetic propagator for SEND+MORE=MONEY
-Based on the propagator in Van Hentenryck's Coursera course on [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization/home/welcome). The propagator was discussed in Video [CS-2](https://www.coursera.org/learn/discrete-optimization/lecture/nHott/cp-2-propagation-arithmetic-constraints-send-more-money).
+A solver with an arithmetic propagator for SEND+MORE=MONEY.
+It is based on the propagator in Van Hentenryck's Coursera course on [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization/home/welcome). The propagator is discussed in [Video CS-2](https://www.coursera.org/learn/discrete-optimization/lecture/nHott/cp-2-propagation-arithmetic-constraints-send-more-money).
 
 The program can be run by running the file `send_more_money.py`.
 
-The feature of interest is the propagator based on interval arithmetic as discussed by Van Hentenryck. The propagator is specialized to arithmetic addition problems and operates on column at a time. It is implemented in the function `column_propagator` in the file `constraints_and_propagators.py`. The function is generously commented.
+The feature of interest is the propagator, which is based on interval arithmetic as discussed by Van Hentenryck. The propagator is specialized to arithmetic addition problems and operates on column at a time. It is implemented in the function `column_propagator` in the file `constraints_and_propagators.py`. The function is generously commented.
 
 The propagator is called repeatedly during the search, which is implemented by the function `complete_the_assignment` in the file `CSP.py`. It is called, via the function `run_column_propagator`, at the beginning of `complete_the_assignment`. Since `complete_the_assignment`is a recursive search, the propagator is called after every trial assignment of a value to a variable. 
 
 The function `run_column_propagator` repeatedly calls `column_propagator` on all the columns until no new information is generated, at which point the search continues.  
 
-An execution of `SEND_MORE_MONEY` generates this output. (The variables `C_i_` are carry variables.)
+An execution of `SEND_MORE_MONEY` generates this output. (The variables `C_i` are carry variables. In particular, `C0` is the carry-in variable to the units position. It is defined to be 0. The anonymous variable `'_'` serves as left-fill for short numbers and has the value 0. As you can see in the Initial state, the only pre-defined values are `C0` and `_`, which are both 0.)
 
 ```
 Problem: (['SEND', 'MORE'], 'MONEY')
@@ -48,6 +48,8 @@ Solution found after 4 assignments!
 
 ```
 
-The initial propagation finds values for problem variables `O=0`, `M=1`, and `S=9`, and for the two carry variables `C3=0` and `C4=1`.
+The initial propagation finds values for problem variables `O=0`, `M=1`, and `S=9`, and for the three carry variables `C3=0`,  `C4=1`, and `C5=0`. (`C5` is the carry-out variables from the left-most column. The system is able to derive its value.)
 
-The search selects E as the first variable for which to try trial values. Since 0 and 1 are taken, the search tries `E=2`, `E=3`, and `E=4`. Each of these are found to be incompatible with the problem specificatnoi. When the search tries `E=5`, it is able to solve the entire problem. So given the power of the arithmetic propagator, only four search steps were needed to solve the problem
+The search selects `E` as the first variable for which to try trial values. Since 0 and 1 are taken, the search tries `E=2`, `E=3`, and `E=4`. Each of these are found to be incompatible with the problem specification. When the search tries `E=5`, it is able to solve the entire problem. 
+
+In other words, given the power of the arithmetic propagator, only four search steps are needed to solve the problem.
