@@ -1,4 +1,4 @@
-# SEND_MORE_MONEY
+# SEND + MORE = MONEY
 A solver with an arithmetic propagator for SEND+MORE=MONEY.
 It is based on the propagator in Van Hentenryck's Coursera course on [Discrete Optimization](https://www.coursera.org/learn/discrete-optimization/home/welcome). The propagator is discussed in [Video CP-2](https://www.coursera.org/learn/discrete-optimization/lecture/nHott/cp-2-propagation-arithmetic-constraints-send-more-money).
 
