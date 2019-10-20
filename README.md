@@ -4,7 +4,7 @@ It is based on the propagator in Van Hentenryck's Coursera course on [Discrete O
 
 The program can be run by running the file `send_more_money.py`.
 
-The feature of interest is the propagator, which is based on interval arithmetic as discussed by Van Hentenryck. The propagator is specialized to arithmetic addition problems and operates on column at a time. It is implemented in the function `column_propagator` in the file `constraints_and_propagators.py`. The function is generously commented.
+The primary feature of interest is the propagator, which is based on interval arithmetic as discussed by Van Hentenryck. The propagator is specialized to arithmetic addition problems and operates on column at a time. It is implemented in the function `column_propagator` in the file `constraints_and_propagators.py`. The function is generously commented.
 
 The propagator is called repeatedly during the search, which is implemented by the function `complete_the_assignment` in the file `CSP.py`. It is called, via the function `run_column_propagator`, at the beginning of `complete_the_assignment`. Since `complete_the_assignment`is a recursive search, the propagator is called after every trial assignment of a value to a variable. 
 
