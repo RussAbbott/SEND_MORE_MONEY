@@ -72,7 +72,6 @@ class CSP(Generic[V, D]):
 
         # If all problem variables are assigned, return result.
         assignment_for_prob_vars = domains_to_assignment(domains)
-        # if len(assignment_for_prob_vars) == len(self.problem_vars):
         if set(self.problem_vars) <= set(assignment_for_prob_vars):
             return (assignment_for_prob_vars, domains)
 
