@@ -62,12 +62,12 @@ class CSP(Generic[V, D]):
         if assignment is None:
             return (None, domains)
 
-        # Print assigned/unassigned status
-        unassigned_variables: List[V] = [v for v in domains if len(domains[v]) > 1]
         if selected_var is None:
             print(f'\nState after initial propagation')
         else:
             print(f'\nPropagation after setting {selected_var} = {selected_val}')
+        # Print assigned/unassigned status
+        unassigned_variables: List[V] = [v for v in domains if len(domains[v]) > 1]
         print(f'assigned: {assignment};\nunassigned: {unassigned_variables}')
 
         # If all problem variables are assigned, return result.
