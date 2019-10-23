@@ -73,7 +73,6 @@ def generate_columns(terms, sum) -> Tuple[List[Tuple[List[str], Tuple[str, str]]
     carry_out = carry_vars[1:]
     cols = list(reversed(list(zip(zip_longest(carry_in, *map(list, (map(reversed, terms))), fillvalue='_'),
                                   zip_longest(carry_out, list(reversed(sum)), fillvalue=' ')))))
-    # problem_vars = frozenset(reduce(add, terms + [sum]))
     return (cols, carry_vars)
 
 
